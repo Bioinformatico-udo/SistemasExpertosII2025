@@ -48,7 +48,7 @@ Este repositorio está organizado en diferentes ramas para que cada grupo trabaj
 
 # 1. Organización del Repositorio
 
-Cada grupo tiene su propia rama: Algas, Corales, Cangrejos.
+Cada grupo tiene su propia rama: Grupo1, Grupo2, Grupo3, Grupo4 y Grupo5.
 Los integrantes de cada grupo solo deben trabajar en su respectiva rama.
 El código en la rama main solo debe actualizarse cuando se aprueben los cambios de cada grupo.
 
