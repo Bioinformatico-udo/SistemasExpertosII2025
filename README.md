@@ -1,6 +1,6 @@
 # Repositorio de Proyectos de Sistemas Expertos
 
-Bienvenido/a al repositorio oficial de **Proyectos de Sistemas Expertos**. Este espacio está dedicado a los proyectos desarrollados por los grupos de trabajo A, B, C, D, E y F. Cada grupo tiene asignada una carpeta específica para trabajar en su proyecto, con el objetivo de evitar conflictos entre equipos.
+Bienvenido/a al repositorio oficial de **Proyectos de Sistemas Expertos**. Este espacio está dedicado a los proyectos desarrollados por los grupos de trabajo 1, 2, 3, 4 y 5. Cada grupo tiene asignada una carpeta específica para trabajar en su proyecto, con el objetivo de evitar conflictos entre equipos.
 
 ---
 
