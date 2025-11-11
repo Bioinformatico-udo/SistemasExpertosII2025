@@ -16,7 +16,7 @@ Fomentar el aprendizaje, la creatividad y el desarrollo de habilidades práctica
 El repositorio está organizado en carpetas individuales para cada grupo. Cada equipo debe trabajar exclusivamente en su carpeta asignada:
 
 ```
-/Proyectos-Sistemas-Expertos
+/SistemasExpertosII2025
 ├── Grupo1/
 ├── Grupo2/
 ├── Grupo3/
