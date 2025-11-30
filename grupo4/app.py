@@ -1,5 +1,5 @@
 import customtkinter
-import sklearn as kit
+import sklearn as kit #TODO: decidir sí usar Support Vector Machines o Decision Trees.
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -8,8 +8,7 @@ class App(customtkinter.CTk):
         self.title("Inserte título de la aplicación")
         self.geometry("400x150")
         self.grid_columnconfigure((0,1), weight=1)
-        """datos de la estructura y organización de la aplicación
-        TODO: separar los atributos en clases conforme vaya avanzando la aplicación."""
+        #TODO: separar los atributos en clases conforme vaya avanzando la aplicación.
         self.button = customtkinter.CTkButton(self, text="botoncito", command=self.button_callback)
         self.button.grid(row=0, column=0, padx=20, pady=20, sticky="ew", columnspan=2)
         self.checkbox_1 = customtkinter.CTkCheckBox(self, text="checkbox 1")
