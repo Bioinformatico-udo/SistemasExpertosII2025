@@ -1,0 +1,23 @@
+# Entorno Virtual
+venv/
+env/
+.env
+
+# Python basura
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Base de datos (Opcional: súbela si quieres que los alumnos ya tengan datos)
+# seith_data.db
+
+# Archivos de sistema
+.vscode/
+.idea/
+*.log
+
+# Assets personales
+assets/reporte_*.pdf
+assets/SEITH_Reporte_*.pdf
+C:/Users/STB/.gemini/
