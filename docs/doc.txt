@@ -1,0 +1,43 @@
+Esta es la documentación técnica del sistema, diseñada para explicar la arquitectura y el funcionamiento lógico del motor de inferencia.
+
+Documentación Técnica: Sistema Experto Taxonómico
+Este software implementa un Sistema Experto Basado en Reglas utilizando una estructura de árbol de decisión para la clasificación biológica.
+
+1. Modelo de Datos (Base de Conocimiento)
+La base de conocimiento está estructurada como un Grafo Acíclico Dirigido implementado mediante diccionarios anidados. Cada nodo puede ser de dos tipos:
+
+Nodo de Decisión: Contiene una pregunta y dos ramas (si, no).
+
+Nodo Hoja: Contiene un resultado final.
+
+Atributo nota: Opcional en cualquier nodo, ofrece contexto taxonómico adicional.
+
+2. Arquitectura del Motor de Inferencia
+La clase MotorDeInferencia desacopla la lógica de control de la interfaz:
+
+Pila de Estados (history): Utiliza st.session_state.history para almacenar la ruta recorrida. Esto permite la persistencia de datos entre re-renderizados de Streamlit.
+
+Método obtener_actual(): Recupera el último nodo visitado (el tope de la pila).
+
+Método procesar(answer): Realiza la transición al siguiente estado según la respuesta del usuario, añadiendo el nuevo nodo a la pila.
+
+Método atras(): Implementa el retroceso eliminando el último elemento de la pila (LIFO).
+
+3. Componentes de la Interfaz (UI)
+El flujo de usuario se gestiona dinámicamente:
+
+st.info: Muestra las observaciones técnicas o diagnósticas.
+
+st.columns: Organiza los botones de decisión para una experiencia táctil y visual balanceada.
+
+st.rerun(): Asegura que la interfaz se actualice inmediatamente después de cada interacción.
+
+4. Flujo de Trabajo
+El usuario visualiza la característica morfológica en pantalla.
+
+Al presionar un botón, el motor busca la clave (si / no) en el diccionario actual.
+
+Si el nuevo diccionario contiene la clave resultado, se da por finalizada la sesión y se muestra la especie.
+
+5. Escalabilidad
+Para añadir nuevas familias o especies, solo se requiere modificar el diccionario BASE_DE_CONOCIMIENTO sin tocar el código del motor ni de la interfaz, siguiendo el principio de diseño de separación de intereses.
