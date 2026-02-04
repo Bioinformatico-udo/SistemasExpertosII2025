@@ -31,7 +31,7 @@ class LoginPage(ctk.CTkFrame):
 
         self.title_label = ctk.CTkLabel(
             self.card, 
-            text="HIPPIDAE", 
+            text="SEITH", 
             font=("Segoe UI", 40, "bold"), 
             text_color="#00FFFF" # Cyan
         )

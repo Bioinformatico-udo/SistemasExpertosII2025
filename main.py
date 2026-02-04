@@ -18,7 +18,7 @@ class SeithApp(ctk.CTk):
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("blue")
         
-        self.title("Proyecto - Sistema Experto")
+        self.title("SEITH - Sistema Experto")
         self.geometry("1100x800")
         
         # Centrar ventana en pantalla
