@@ -1,5 +1,17 @@
 import customtkinter
 import sklearn as kit #TODO: decidir sí usar Support Vector Machines o Decision Trees.
+import os
+import tempfile
+
+#añade la pantalla de carga "splash.png"
+if "NUITKA_ONEFILE_PARENT" in os.environ:
+    splash_filename = os.path.join(
+        tempfile.gettempdir(),
+        "onefile_%d_splash_feedback.tmp" % int(os.environ["NUITKA_ONEFILE_PARENT"])
+    )
+    if os.path.exists(splash_filename):
+        os.unlink(splash_filename)
+
 
 class App(customtkinter.CTk):
     def __init__(self):
