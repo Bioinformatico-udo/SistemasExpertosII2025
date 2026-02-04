@@ -24,7 +24,7 @@ class UserPage(ctk.CTkFrame):
         self.header = ctk.CTkFrame(self, height=70, corner_radius=0)
         self.header.pack(fill="x", side="top")
         
-        ctk.CTkLabel(self.header, text="SEITH - Identificación", font=("Segoe UI", 20, "bold"), text_color="cyan").pack(side="left", padx=20, pady=15)
+        ctk.CTkLabel(self.header, text="Seith - Identificación", font=("Segoe UI", 20, "bold"), text_color="cyan").pack(side="left", padx=20, pady=15)
         ctk.CTkButton(self.header, text="Cerrar Sesión", width=100, corner_radius=15, fg_color="#CC0000", command=self.on_logout).pack(side="right", padx=20, pady=15)
 
         # Layout Centrado
@@ -40,7 +40,7 @@ class UserPage(ctk.CTkFrame):
         # --- NUEVO: Selección de Rasgos Estructurados ---
         self.manual_frame = ctk.CTkFrame(self.center_col, corner_radius=15, fg_color="#1a1a1a")
         self.manual_frame.pack(fill="x", padx=40, pady=10)
-        ctk.CTkLabel(self.manual_frame, text="Selleccione los rasgos observados en el espécimen:", font=("Segoe UI", 13, "bold"), text_color="white").pack(pady=15)
+        ctk.CTkLabel(self.manual_frame, text="Seleccione los rasgos observados en el espécimen:", font=("Segoe UI", 13, "bold"), text_color="white").pack(pady=15)
         
         # Selectores
         traits_grid = ctk.CTkFrame(self.manual_frame, fg_color="transparent")
@@ -83,7 +83,7 @@ class UserPage(ctk.CTkFrame):
         
         self.ai_output = ctk.CTkTextbox(self.ai_frame, height=200, font=("Segoe UI", 11, "italic"), fg_color="#0a0a0a", corner_radius=10)
         self.ai_output.pack(fill="x", padx=20, pady=10)
-        self.ai_output.insert("0.0", "🤖 Soy el Experto SEITH.\n\nCategoriza el espécimen usando los selectores superiores para que pueda darte un sustento científico.")
+        self.ai_output.insert("0.0", "🤖 Soy SEITH el Experto.\n\nCategoriza el espécimen usando los selectores superiores para que pueda darte un sustento científico.")
  
         self.ai_question_entry = ctk.CTkEntry(self.ai_frame, placeholder_text="Pregunta algo al experto...", height=35)
         self.ai_question_entry.pack(fill="x", padx=20, pady=5)
@@ -96,8 +96,8 @@ class UserPage(ctk.CTkFrame):
         self.btn_chat.pack(pady=15)
  
         self.btn_export = ctk.CTkButton(
-            self.center_col, text="GENERAR REPORTE CIENTÍFICO PDF", corner_radius=25, height=50,
-            fg_color="#008080", state="disabled", font=("Segoe UI", 14, "bold"), command=self.export_pdf
+            self.center_col, text="", corner_radius=15, height=50,
+            fg_color="#2B2B2B", state="", font=("Segoe UI", 14, "bold"), command=self.export_pdf
         )
         self.btn_export.pack(pady=20, padx=40)
  
@@ -125,7 +125,6 @@ class UserPage(ctk.CTkFrame):
             "2. CATEGORIZACIÓN: Seleccione los valores correspondientes en el panel central.\n"
             "3. INFERENCIA: El sistema calculará automáticamente las probabilidades.\n"
             "4. CONSULTA: Use al 'Orientador IA' para obtener detalles biológicos específicos.\n"
-            "5. REPORTE: Genere un certificado PDF con los resultados obtenidos.\n\n"
             "RECUERDA:\n"
             "El éxito de la identificación depende de la precisión de tus observaciones."
         )
@@ -141,6 +140,7 @@ class UserPage(ctk.CTkFrame):
         link.bind("<Button-1>", lambda e: os.startfile("https://console.groq.com/keys"))
 
         ctk.CTkLabel(welcome, text="(Haz clic arriba para ir a la web de Groq)", font=("Segoe UI", 10, "italic")).pack(pady=5)
+
 
         ctk.CTkButton(welcome, text="¡ENTENDIDO, EMPECEMOS!", height=45, corner_radius=22, command=welcome.destroy).pack(pady=40)
 
@@ -165,7 +165,7 @@ class UserPage(ctk.CTkFrame):
         def do_chat():
             results = getattr(self, 'current_full_results', None)
             answer = self.controller.chat_with_ai(question, results)
-            self.ai_output.insert("end", f"\n\n🤖 Experto SEITH: {answer}")
+            self.ai_output.insert("end", f"\n\n🤖 Experto: {answer}")
             self.ai_output.see("end")
 
         import threading
