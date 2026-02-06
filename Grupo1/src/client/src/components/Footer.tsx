@@ -4,7 +4,7 @@ export function Footer() {
   const developers = [
     {
       name: "Andrés Alfonzo",
-      role: "Desarrollador Backend",
+      role: "Desarrollador",
       portfolio: "https://vacaroja.github.io/",
       github: "https://github.com/Vacaroja",
       linkedin: "https://www.linkedin.com/in/andrés-alfonzo-4342351bb?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -12,22 +12,22 @@ export function Footer() {
       avatar: "AA"
     },
     {
-      name: "Carlos Ramírez",
-      role: "Desarrollador Full Stack",
+      name: "Alexandra Quijada",
+      role: "Desarrollador",
       portfolio: "https://carlosramirez.dev",
       github: "https://github.com/carlosramirez",
       linkedin: "https://linkedin.com/in/carlosramirez",
-      email: "carlos@example.com",
-      avatar: "CR"
+      email: "alexandraquijada@gmail.com",
+      avatar: "AQ"
     },
     {
-      name: "Ana Martínez",
-      role: "Diseñadora UX/UI",
-      portfolio: "https://anamartinez.design",
-      github: "https://github.com/anamartinez",
+      name: "Gilberto Velasquez",
+      role: "Desarrolladores",
+      portfolio: "https://gvelasquez03.github.io/",
+      github: "https://gvelasquez03.github.io/",
       linkedin: "https://linkedin.com/in/anamartinez",
-      email: "ana@example.com",
-      avatar: "AM"
+      email: "gilberto123rafael@gmail.com",
+      avatar: "GV"
     }
   ];
 

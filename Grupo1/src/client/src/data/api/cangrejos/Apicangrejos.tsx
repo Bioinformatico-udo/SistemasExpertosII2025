@@ -4,7 +4,7 @@ export const CRAB_SPECIES = [
   { 'id': 1, 'nombre_cientifico': 'Neopisosoma_neglectum', 'nombre_display': 'Neopisosoma neglectum', 'image': 'images/crab/caparazon_rugoso.jpg' },
   { 'id': 2, 'nombre_cientifico': 'Neopisosoma_angustifrons', 'nombre_display': 'Neopisosoma angustifrons', 'image': 'images/crab/caparazon_rugoso.jpg' },
   { 'id': 3, 'nombre_cientifico': 'Neopisosoma_orientale', 'nombre_display': 'Neopisosoma orientale', 'image': 'images/crab/caparazon_rugoso.jpg' },
-  { 'id': 4, 'nombre_cientifico': 'Clastotoechus_nodosus', 'nombre_display': 'Clastotoechus nodosus', 'image': '/imagenes/antena_lisa.jpg' },
+  { 'id': 4, 'nombre_cientifico': 'Clastotoechus_nodosus', 'nombre_display': 'Clastotoechus nodosus', 'image': '/imagenes/cangrejos/Clastotoechus_nodosus.png' },
   { 'id': 5, 'nombre_cientifico': 'Pachycheles_serratus', 'nombre_display': 'Pachycheles serratus', 'image': 'images/crab/caparazon_rugoso.jpg' },
   { 'id': 6, 'nombre_cientifico': 'Pachycheles_monilifer', 'nombre_display': 'Pachycheles monilifer', 'image': 'images/crab/caparazon_rugoso.jpg' },
   { 'id': 7, 'nombre_cientifico': 'Pachycheles_riseii', 'nombre_display': 'Pachycheles riseii', 'image': 'images/crab/caparazon_rugoso.jpg' },

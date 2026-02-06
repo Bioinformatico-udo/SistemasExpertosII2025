@@ -25,13 +25,13 @@ export function Quiz({ question, questionNumber, totalQuestions, onAnswer }: Qui
 
   const handleAnswer = (answer: boolean) => {
     setSelectedAnswer(answer);
-
-
+    setShowExplanation(true);
 
     setTimeout(() => {
       onAnswer(answer);
       setSelectedAnswer(null);
-    }, 1000);
+      setShowExplanation(false);
+    }, 3000);
   };
 
 

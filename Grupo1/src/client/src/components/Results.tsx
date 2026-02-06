@@ -72,11 +72,7 @@ export function Results({ resultado, score, totalQuestions, questions, answers, 
             transition={{ delay: 0.2, type: "spring" }}
             className="flex justify-center mb-6"
           >
-            <ImageWithFallback
-              src={especieEncontrada ? especieEncontrada.image : '/imagenes/antena_lisa.jpg'}
-              alt="Crustáceo - No"
-              className="w-34 h-34 drop-shadow-2xl"
-            />
+            
           </motion.div>
           <h2 className="text-5xl mb-4 drop-shadow-lg">{resultado}</h2>
         </div>

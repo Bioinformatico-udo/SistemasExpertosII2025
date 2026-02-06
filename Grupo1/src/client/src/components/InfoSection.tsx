@@ -1,13 +1,14 @@
 import { motion } from 'motion/react';
-import { Info, Search, Waves, Shell, ArrowRight } from 'lucide-react';
+import { Info, Search, Waves, Shell, ArrowRight,BookOpen } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { FlipCard } from './FlipCard';
 
 interface InfoSectionProps {
   onStartQuiz: () => void;
+  onNavigateToSpecies?: () => void;
 }
 
-export function InfoSection({ onStartQuiz }: InfoSectionProps) {
+export function InfoSection({ onStartQuiz, onNavigateToSpecies}: InfoSectionProps) {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
@@ -163,22 +164,35 @@ export function InfoSection({ onStartQuiz }: InfoSectionProps) {
       >
         <div className="bg-gradient-to-r from-teal-500 via-cyan-400 to-blue-500 rounded-3xl shadow-2xl p-12">
           <h3 className="text-4xl text-white mb-4">
-            ¿Quires identificar un Porcelánido?
+            Identificar un Porcelánido | Agregar una nueva Especie
           </h3>
           <p className="text-xl text-cyan-50 mb-8 max-w-2xl mx-auto">
-            Con tan solo una serie de preguntas podras indetificar a los porcelanidos.
-            Respondé SÍ o NO a cada pregunta para poder diferenciar 
-            los porcelánidos de otros crustáceos.
+            
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={onStartQuiz}
-            className="bg-white text-teal-700 py-4 px-12 rounded-2xl text-2xl flex items-center gap-4 mx-auto hover:shadow-2xl transition-shadow"
-          >
-            Comenzar
-            <ArrowRight className="w-8 h-8" />
-          </motion.button>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={onStartQuiz}
+              className="bg-white text-teal-700 py-4 px-12 rounded-2xl text-2xl flex items-center gap-4 mx-auto hover:shadow-2xl transition-shadow"
+            >
+              Comenzar
+              <ArrowRight className="w-8 h-8" />
+            </motion.button>
+
+            {onNavigateToSpecies && (
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={onNavigateToSpecies}
+                  className="bg-white text-cyan-700 py-4 px-12 rounded-2xl text-2xl flex items-center gap-4 mx-auto hover:shadow-2xl transition-shadow"
+                >
+                  Ver Especies
+                  <BookOpen className="w-8 h-8" />
+                </motion.button>
+              )}
+          </div>
         </div>
       </motion.div>
     </div>

@@ -4,6 +4,8 @@ import { Quiz } from './components/Quiz';
 import { Results } from './components/Results';
 import { InfoSection } from './components/InfoSection';
 import { Footer } from './components/Footer';
+import { SpeciesPage } from './components/SpeciesPage';
+import type { Species } from './types/species';
 // @ts-ignore: módulo de imagen de Figma sin declaraciones de tipo
 import porcelainCrabBg from 'figma:asset/8e4e354dea92540e23d4ff457368ea3333d15dfe.png';
 import { enviarDatosAxios } from './data/api/cangrejos/Apicangrejos';
@@ -16,6 +18,27 @@ export default function App() {
   const [quizStarted, setQuizStarted] = useState(false);
   const [answersHistory, setAnswersHistory] = useState<number[]>([]);
   const [apiResultString, setApiResultString] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<'home' | 'species'>('home');
+  const [species, setSpecies] = useState<Species[]>([
+    {
+      id: '1',
+      nombre: 'Cangrejo porcelana manchado',
+      nombreCientifico: 'Petrolisthes galathinus',
+      habitat: 'Arrecifes de coral y zonas rocosas',
+      tamano: '1-2 cm de caparazón',
+      descripcion: 'Pequeño cangrejo porcelana con manchas características en el caparazón. Común en el Caribe.',
+      fechaAgregada: new Date('2025-01-15')
+    },
+    {
+      id: '2',
+      nombre: 'Cangrejo porcelana verde',
+      nombreCientifico: 'Petrolisthes armatus',
+      habitat: 'Bajo rocas en zonas intermareales',
+      tamano: '0.8-1.5 cm de caparazón',
+      descripcion: 'Especie invasora con coloración verde-marrón. Muy abundante en aguas cálidas.',
+      fechaAgregada: new Date('2025-02-01')
+    }
+  ]);
 
   const questions = [
     {
@@ -120,6 +143,27 @@ export default function App() {
     setQuizStarted(true);
   };
 
+  const handleAddSpecies = (newSpecies: Omit<Species, 'id' | 'fechaAgregada'>) => {
+    const species: Species = {
+      ...newSpecies,
+      id: Date.now().toString(),
+      fechaAgregada: new Date()
+    };
+    setSpecies(prev => [...prev, species]);
+  };
+
+  const handleDeleteSpecies = (id: string) => {
+    setSpecies(prev => prev.filter(s => s.id !== id));
+  };
+
+  const navigateToSpecies = () => {
+    setCurrentPage('species');
+  };
+
+  const navigateToHome = () => {
+    setCurrentPage('home');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-teal-50 to-blue-100 relative overflow-hidden">
       {/* Patrón de fondo decorativo con imagen del porcelánido */}
@@ -144,26 +188,37 @@ export default function App() {
       <Header />
 
       <main className="container mx-auto px-4 py-8 max-w-6xl relative z-10">
-        {!quizStarted ? (
-          <InfoSection onStartQuiz={startQuiz} />
-        ) : !showResults ? (
-          <Quiz
-            question={questions[currentQuestion]}
-            questionNumber={currentQuestion + 1}
-            totalQuestions={questions.length}
-            onAnswer={handleAnswer}
-          />
+        {currentPage === 'home' ? (
+          <>
+            {!quizStarted ? (
+              <InfoSection onStartQuiz={startQuiz} onNavigateToSpecies={navigateToSpecies} />
+            ) : !showResults ? (
+              <Quiz
+                question={questions[currentQuestion]}
+                questionNumber={currentQuestion + 1}
+                totalQuestions={questions.length}
+                onAnswer={handleAnswer}
+              />
+            ) : (
+              <Results
+                resultado={apiResultString ?? ''}
+                score={score}
+                totalQuestions={questions.length}
+                questions={questions}
+                answers={answers}
+                onRestart={resetQuiz}
+              />
+            )}
+          </>
         ) : (
-          <Results
-            resultado={apiResultString ?? ''}
-            score={score}
-            totalQuestions={questions.length}
-            questions={questions}
-            answers={answers}
-            onRestart={resetQuiz}
+          <SpeciesPage
+            species={species}
+            onAddSpecies={handleAddSpecies}
+            onDeleteSpecies={handleDeleteSpecies}
+            onBack={navigateToHome}
           />
         )}
-      </main>
+      </main>      
       <Footer />
     </div>
   );
