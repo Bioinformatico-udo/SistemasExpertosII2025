@@ -1,0 +1,74 @@
+{
+  "Neopisosoma_neglectum": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Neopisosoma neglectum",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Especie con coloración característica...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Neopisosoma_angustifrons": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Neopisosoma angustifrons",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Neopisosoma_orientale": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Neopisosoma orientale",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Clastotoechus_nodosus": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Clastotoechus nodosus",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Pachycheles_serratus": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Pachycheles serratus",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Pachycheles_monilifer": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Pachycheles monilifer",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Pachycheles_riseii": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Pachycheles riseii",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Pachycheles_ackleianus": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Pachycheles ackleianus",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  },
+  "Petrolisthes_tridentatus": {
+    "nombre": "Nombre común aquí",
+    "nombreCientifico": "Petrolisthes tridentatus",
+    "habitat": "Bajo rocas en zonas intermareales",
+    "tamano": "0.8-1.5 cm de caparazón",
+    "descripcion": "Descripción de la especie...",
+    "fechaAgregada": "2025-02-06"
+  }
+}
