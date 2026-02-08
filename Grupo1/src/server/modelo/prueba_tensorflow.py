@@ -74,11 +74,11 @@ def entrenar_modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1],ruta_
     ruta_salida_tflite = "modelo/cangrejos_modelo_guardado.tflite"
     modelo.save(ruta)
     
-
+    """
     plt.xlabel('# Epoca')
     plt.ylabel('Magnitud de perdida') 
     plt.plot(historial.history['loss'])
-    plt.show()
+    plt.show()"""
 
 
     prediccion = modelo.predict(test)
@@ -111,4 +111,3 @@ def convertir_a_tflite(file_path,ruta_salida_tflite):
 
 
     
-modelo_cangrejo()

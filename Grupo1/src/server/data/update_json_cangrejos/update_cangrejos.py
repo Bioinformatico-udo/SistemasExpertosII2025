@@ -1,5 +1,7 @@
 import json
 
+from data.Corutine_training_sync.courutine_training import start_training_thread
+
 def update_cangrejos(file_path,especie_nueva):
     especie_id = especie_nueva['nombreCientifico'].replace(" ", "_")
     try:
@@ -9,6 +11,7 @@ def update_cangrejos(file_path,especie_nueva):
             f.seek(0)
             json.dump(cangrejos, f, indent=4, ensure_ascii=False)
             f.truncate()
+        start_training_thread()
         return {"mensaje": "Especie guardada exitosamente", "especie": especie_id}
     except Exception:
         return {"error": "Error al guardar la especie"}
