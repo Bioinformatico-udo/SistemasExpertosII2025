@@ -1,6 +1,7 @@
 import json
 from flask import Flask, render_template, request, redirect, url_for, session,jsonify
 from constantes.preguntas import PREGUNTAS
+from modelo.cangrejos_default.default_cangrejos import default_cangrejos
 from modelo.prueba_tensorflow import modelo_cangrejo
 from flask_cors import CORS
 from data.read_json_cangrejos.read_cangrejos import read_cangrejos
@@ -45,6 +46,10 @@ def guardar_especimen():
 @app.route('/borrar_especimen/<nombre_especie>', methods=['DELETE'])
 def borrar_especimen(nombre_especie):
     return delete_cangrejo(file_path_json, nombre_especie)
+
+@app.route('/cangrejos_default', methods=['GET'])
+def cangrejos_default():
+    return default_cangrejos()
 
 if __name__ == '__main__':
     app.run(debug=True)
