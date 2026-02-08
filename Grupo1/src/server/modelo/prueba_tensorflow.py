@@ -1,3 +1,4 @@
+import json
 import tensorflow as tf
 import pandas as pd
 import numpy as np
@@ -5,24 +6,35 @@ from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 
 ##----------------------------------------------Funcion para llamar al modelo ya guardado
-def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0,1,0]):
+def modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1]):
     prueba = pd.read_csv("modelo/cangrejos.csv")
 
-    ruta_guardada = "modelo/cangrejos_modelo_guardado.keras"
+    ruta_guardada = "modelo/cangrejos_modelo_guardado.tflite"
     try:
-        saved_model = tf.keras.models.load_model(ruta_guardada)
+        saved_model = tf.lite.Interpreter(ruta_guardada)
+        saved_model.allocate_tensors()
+        
+        input_details = saved_model.get_input_details()
+        output_details = saved_model.get_output_details()
+        
+        
     except Exception as e:
         print("fallo")
-    test = np.array(respuestas, dtype=float)
-    test = test.reshape(1, -1)
+    test = np.array(respuestas, dtype=np.float32)
+    test = np.expand_dims(test, axis=0)
 
-    le = LabelEncoder()
-    le.fit(prueba['Especie'].astype(str))
 
-    prediccion = saved_model.predict(test)
+    saved_model.set_tensor(input_details[0]['index'],test)
+    saved_model.invoke()
+    prediccion = saved_model.get_tensor(output_details[0]['index'])
 
     clase_predicha = np.argmax(prediccion[0])
-    especie_predicha = le.inverse_transform([clase_predicha])[0]
+    
+    with open("data/Cangrejos.json", 'r', encoding='utf-8') as f:
+        data_json = json.load(f)
+    
+    listado_ordenado = sorted(list(data_json.keys()))
+    especie_predicha = listado_ordenado[clase_predicha]
 
     print()
     print("\n----------------------------------------------")
@@ -31,10 +43,10 @@ def modelo_cangrejo(respuestas= [1,0,1,0,0,1,1,0,1,0,1,0,1,0,1,0]):
     return str(especie_predicha)
 
 #--------------------------------------------------------------Funcion para el entrenado del modelo
-def entrenar_modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1]):
+def entrenar_modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1],ruta_csv="modelo/cangrejos.csv"):
     #valor inicial neopisosoma neglectum
     #primero lee el csv
-    prueba = pd.read_csv("modelo/cangrejos.csv")
+    prueba = pd.read_csv(ruta_csv)
     #la convierte en una lista de tipo numpy
     test = np.array(respuestas, dtype=float)
     test = test.reshape(1, -1)
@@ -59,6 +71,7 @@ def entrenar_modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1]):
     historial = modelo.fit(x, y, epochs=600, verbose=False)
     print("Modelo entrenado!")
     ruta = "modelo/cangrejos_modelo_guardado.keras"
+    ruta_salida_tflite = "modelo/cangrejos_modelo_guardado.tflite"
     modelo.save(ruta)
     
 
@@ -72,10 +85,30 @@ def entrenar_modelo_cangrejo(respuestas= [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1]):
 
     clase_predicha = np.argmax(prediccion[0])
     especie_predicha = le.inverse_transform([clase_predicha])[0]
-
+    convertir_a_tflite(ruta,ruta_salida_tflite)
     print()
     print("\n----------------------------------------------")
     print(f"La especie de cangrejo clasificada es:"+  str(especie_predicha))
     print("----------------------------------------------")
 
+def convertir_a_tflite(file_path,ruta_salida_tflite):
+    modelo = tf.keras.models.load_model(file_path)
 
+    # 2. Configurar el conversor
+    converter = tf.lite.TFLiteConverter.from_keras_model(modelo)
+    
+    # 3. Optimizar (opcional, reduce el tamaño del archivo)
+    converter.optimizations = [tf.lite.Optimize.DEFAULT]
+
+    # 4. Convertir
+    tflite_model = converter.convert()
+
+    # 5. Guardar el archivo .tflite
+    with open(ruta_salida_tflite, 'wb') as f:
+        f.write(tflite_model)
+    
+    print(f"¡Éxito! Modelo convertido y guardado en: {ruta_salida_tflite}")
+
+
+    
+modelo_cangrejo()
