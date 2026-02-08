@@ -4,13 +4,15 @@ from constantes.preguntas import PREGUNTAS
 from modelo.prueba_tensorflow import modelo_cangrejo
 from flask_cors import CORS
 from data.read_json_cangrejos.read_cangrejos import read_cangrejos
+from data.update_json_cangrejos.update_cangrejos import update_cangrejos
+from data.delete_json_cangrejos.delete_cangrejo import delete_cangrejo
+
 
 app = Flask(__name__)
 #secret key para la sesion y el guardado de la informacion
 app.secret_key = '1234566789'
 CORS(app)
 file_path_json = 'data/Cangrejos.json'
-
 
 
 @app.route('/cangrejos', methods=['POST'])
@@ -37,11 +39,12 @@ def catalogo():
 
 @app.route('/guardar_especimen', methods=['POST'])
 def guardar_especimen():
-    pass
+    datos_especie = request.get_json()
+    return update_cangrejos(file_path_json, datos_especie)
 
 @app.route('/borrar_especimen/<nombre_especie>', methods=['DELETE'])
 def borrar_especimen(nombre_especie):
-    pass
+    return delete_cangrejo(file_path_json, nombre_especie)
 
 if __name__ == '__main__':
     app.run(debug=True)
