@@ -28,35 +28,30 @@ export function Results({ resultado, score, totalQuestions, questions, answers, 
       return {
         title: "¡Experto en Porcelánidos!",
         message: "¡Perfecto! Tienes todas las características de los porcelánidos. ¡Es un verdadero porcelánidos!",
-        icon: Trophy,
         color: "from-yellow-400 to-amber-500"
       };
     } else if (percentage >= 80) {
       return {
         title: "¡Excelente tienes un Porcelánidos!",
         message: "Tiene la mayores caracteristicas de los Porcelánidos. ¡Muy bien!",
-        icon: Award,
         color: "from-green-400 to-emerald-500"
       };
     } else if (percentage >= 60) {
       return {
         title: "¡Vuelve a intentaro!",
         message: "La especie que intentas identificar no parece ser un Porcelánidos, pero todavía hay espacio para volverlo identificar.",
-        icon: Shell,
         color: "from-blue-400 to-cyan-500"
       };
     } else {
       return {
         title: "¡Lo siento, No es un porcelánidos!",
         message: "Los porcelánidos son fascinantes. Pero la especie que intentas indentificar no es pertence a la familia porcellánidae.",
-        icon: BookOpen,
         color: "from-orange-400 to-red-500"
       };
     }
   };
 
   const result = getResultMessage();
-  const ResultIcon = result.icon;
 
   return (
     <motion.div
@@ -112,9 +107,6 @@ export function Results({ resultado, score, totalQuestions, questions, answers, 
                   `}
                 >
                   <div className="flex items-start gap-3 mb-2">
-                    <span className={`text-2xl ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
-                      {isCorrect ? '✓' : '✗'}
-                    </span>
                     <div className="flex-1">
                       <p className="text-gray-800 mb-2">
                         <strong>Pregunta {index + 1}:</strong> {q.question}

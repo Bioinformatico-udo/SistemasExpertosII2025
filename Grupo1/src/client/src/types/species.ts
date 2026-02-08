@@ -1,5 +1,5 @@
 export interface Species {
-  id: string;
+  id?: string; 
   nombre: string;
   nombreCientifico: string;
   habitat: string;
@@ -7,4 +7,5 @@ export interface Species {
   descripcion: string;
   imagen?: string;
   fechaAgregada: Date;
+  preguntas_identificacion: number[]; 
 }

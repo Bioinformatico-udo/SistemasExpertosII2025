@@ -116,8 +116,8 @@ export function Quiz({ question, questionNumber, totalQuestions, onAnswer }: Qui
                 ? 'hover:shadow-2xl'
                 : selectedAnswer === true
                   ? isCorrect
-                    ? 'shadow-2xl ring-4 ring-green-400'
-                    : 'shadow-2xl ring-4 ring-red-400'
+                    ? 'shadow-2xl ring-4 '
+                    : 'shadow-2xl ring-4 '
                   : 'opacity-50'
               }
               disabled:cursor-not-allowed
@@ -153,10 +153,10 @@ export function Quiz({ question, questionNumber, totalQuestions, onAnswer }: Qui
                   <Badge className="w-12 h-12 relative z-10" />
                 ) : selectedAnswer === true ? (
                   // Si la respuesta seleccionada es CORRECTA (asumiendo true = correcto)
-                  <BadgeCheck className="w-12 h-12 relative z-10 text-green-500" />
+                  <BadgeCheck className="w-12 h-12 relative z-10 " />
                 ) : (
                   // Si la respuesta seleccionada es INCORRECTA (asumiendo false = incorrecto)
-                  <Badge className="w-12 h-12 relative z-10 text-red-500" />
+                  <Badge className="w-12 h-12 relative z-10 " />
                 )}
 
                 <span className="text-2xl relative z-10">{question.options[0]}</span>
@@ -179,8 +179,8 @@ export function Quiz({ question, questionNumber, totalQuestions, onAnswer }: Qui
                 ? 'hover:shadow-2xl'
                 : selectedAnswer === false
                   ? isCorrect
-                    ? 'shadow-2xl ring-4 ring-green-400'
-                    : 'shadow-2xl ring-4 ring-red-400'
+                    ? 'shadow-2xl ring-4 '
+                    : 'shadow-2xl ring-4 '
                   : 'opacity-50'
               }
               disabled:cursor-not-allowed
@@ -216,10 +216,10 @@ export function Quiz({ question, questionNumber, totalQuestions, onAnswer }: Qui
                   <Badge className="w-12 h-12 relative z-10" />
                 ) : selectedAnswer === false ? (
                   // Si la respuesta seleccionada es CORRECTA (asumiendo true = correcto)
-                  <BadgeCheck className="w-12 h-12 relative z-10 text-green-500" />
+                  <BadgeCheck className="w-12 h-12 relative z-10 " />
                 ) : (
                   // Si la respuesta seleccionada es INCORRECTA (asumiendo false = incorrecto)
-                  <Badge className="w-12 h-12 relative z-10 text-red-500" />
+                  <Badge className="w-12 h-12 relative z-10 " />
                 )}
                 <span className="text-2xl relative z-10">{question.options[1]}</span>
               </div>
@@ -227,35 +227,7 @@ export function Quiz({ question, questionNumber, totalQuestions, onAnswer }: Qui
           </motion.button>
         </div>
 
-        {/* Explanation */}
-        {showExplanation && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ type: "spring" }}
-            className={`
-              p-6 rounded-2xl text-center relative overflow-hidden
-              ${isCorrect
-                ? 'bg-green-50 border-2 border-green-400'
-                : 'bg-red-50 border-2 border-red-400'
-              }
-            `}
-          >
-            {isCorrect && (
-              <motion.div
-                className="absolute inset-0 bg-green-200/50"
-                animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
-                transition={{ duration: 0.6 }}
-              />
-            )}
-            <p className={`text-xl mb-3 ${isCorrect ? 'text-green-800' : 'text-red-800'}`}>
-              {isCorrect ? '¡Correcto! ✓' : 'Incorrecto ✗'}
-            </p>
-            <p className="text-gray-700 text-lg relative z-10">
-              {question.explanation}
-            </p>
-          </motion.div>
-        )}
+     
       </div>
     </motion.div>
   );

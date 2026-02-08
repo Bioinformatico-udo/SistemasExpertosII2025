@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
-import { Plus, X } from 'lucide-react';
+import { Plus, X, Image as ImageIcon } from 'lucide-react';
 import type { Species } from '../types/species';
 
 interface AddSpeciesFormProps {
@@ -15,38 +15,66 @@ export function AddSpeciesForm({ onAddSpecies, onCancel }: AddSpeciesFormProps) 
   const [formData, setFormData] = useState({
     nombre: '',
     nombreCientifico: '',
-    habitat: '',
     tamano: '',
     descripcion: '',
-    imagen: ''
+    imagen: '',
+    caparazon: '0',
+    antena: '0',
+    maxilipedos: '0',
+    quelipedos: '0',
+    formaCaparazon: '0',
+    telsones: '0',
+    pleopodos: '0',
+    habitatTipo: '0' 
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.nombre || !formData.nombreCientifico) {
-      alert('Por favor completa al menos el nombre común y científico');
-      return;
-    }
-
-    onAddSpecies(formData);
-    
-    // Reset form
-    setFormData({
-      nombre: '',
-      nombreCientifico: '',
-      habitat: '',
-      tamano: '',
-      descripcion: '',
-      imagen: ''
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, imagen: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const crearPar = (val: string) => (val === '1' ? [0, 1] : [1, 0]);
+
+    // Generamos el array de 16 posiciones que requiere el servidor/TS
+    const preguntas_identificacion = [
+      ...crearPar(formData.caparazon),
+      ...crearPar(formData.antena),
+      ...crearPar(formData.maxilipedos),
+      ...crearPar(formData.quelipedos),
+      ...crearPar(formData.formaCaparazon),
+      ...crearPar(formData.telsones),
+      ...crearPar(formData.pleopodos),
+      ...crearPar(formData.habitatTipo),
+    ];
+
+    const finalData = {
+      nombre: formData.nombre,
+      nombreCientifico: formData.nombreCientifico,
+      habitat: formData.habitatTipo === '0' ? 'Habitats protegidos (Galerias/Rocas)' : 'Habitats Duros (Arrecifes/Corales)',
+      tamano: formData.tamano,
+      descripcion: formData.descripcion,
+      imagen: formData.imagen,
+      preguntas_identificacion: preguntas_identificacion 
+    };
+
+    onAddSpecies(finalData);
+    onCancel?.();
   };
 
   return (
@@ -57,123 +85,99 @@ export function AddSpeciesForm({ onAddSpecies, onCancel }: AddSpeciesFormProps) 
           Agregar Nueva Especie
         </h3>
         {onCancel && (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onCancel}
-            className="text-gray-500 hover:text-gray-700"
-          >
+          <Button variant="ghost" size="icon" onClick={onCancel} className="text-gray-500">
             <X className="w-5 h-5" />
           </Button>
         )}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Nombres */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="nombre" className="text-teal-700">
-              Nombre Común <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="nombre"
-              name="nombre"
-              value={formData.nombre}
-              onChange={handleChange}
-              placeholder="ej. Cangrejo porcelana manchado"
-              className="border-cyan-300 focus:border-teal-500"
-              required
-            />
+            <Label className="text-teal-700 font-bold">Nombre Común *</Label>
+            <Input name="nombre" value={formData.nombre} onChange={handleChange} required className="border-cyan-300" />
           </div>
-
           <div>
-            <Label htmlFor="nombreCientifico" className="text-teal-700">
-              Nombre Científico <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="nombreCientifico"
-              name="nombreCientifico"
-              value={formData.nombreCientifico}
-              onChange={handleChange}
-              placeholder="ej. Petrolisthes galathinus"
-              className="border-cyan-300 focus:border-teal-500 italic"
-              required
-            />
+            <Label className="text-teal-700 font-bold">Nombre Científico *</Label>
+            <Input name="nombreCientifico" value={formData.nombreCientifico} onChange={handleChange} required className="border-cyan-300 italic" />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="habitat" className="text-teal-700">
-              Hábitat
-            </Label>
-            <Input
-              id="habitat"
-              name="habitat"
-              value={formData.habitat}
+        {/* Imagen */}
+        <div className="p-4 bg-cyan-50/50 rounded-xl border border-cyan-100 space-y-3">
+          <Label className="text-teal-700 flex items-center gap-2 font-bold">
+            <ImageIcon className="w-4 h-4" /> Imagen de la Especie
+          </Label>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Input 
+              type="text" 
+              name="imagen" 
+              placeholder="URL de imagen..." 
+              value={formData.imagen.startsWith('data:') ? '' : formData.imagen} 
               onChange={handleChange}
-              placeholder="ej. Arrecifes de coral, bajo rocas"
-              className="border-cyan-300 focus:border-teal-500"
+              className="border-cyan-300"
+            />
+            <Input 
+              type="file" 
+              accept="image/*" 
+              onChange={handleFileChange}
+              className="border-cyan-300 bg-white shadow-sm"
             />
           </div>
+          {formData.imagen && (
+            <div className="mt-2 flex justify-center animate-in fade-in zoom-in duration-300">
+              <img src={formData.imagen} alt="Preview" className="h-32 w-48 object-cover rounded-lg border-2 border-cyan-200 shadow-md" />
+            </div>
+          )}
+        </div>
 
-          <div>
-            <Label htmlFor="tamano" className="text-teal-700">
-              Tamaño
-            </Label>
-            <Input
-              id="tamano"
-              name="tamano"
-              value={formData.tamano}
-              onChange={handleChange}
-              placeholder="ej. 1-2 cm de caparazón"
-              className="border-cyan-300 focus:border-teal-500"
-            />
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          {[
+            { label: 'Caparazón', name: 'caparazon', opts: ['Liso', 'Rugoso'] },
+            { label: 'Antena', name: 'antena', opts: ['Lisa', 'Aserrada'] },
+            { label: 'Maxilipedos', name: 'maxilipedos', opts: ['Lisos', 'Surcos'] },
+            { label: 'Quelipedos', name: 'quelipedos', opts: ['Desiguales', 'Iguales'] },
+            { label: 'Forma', name: 'formaCaparazon', opts: ['Cuadrado', 'Rectangular'] },
+            { label: 'Telsones', name: 'telsones', opts: ['7 Tels.', '5 Tels.'] },
+            { label: 'Pleópodos', name: 'pleopodos', opts: ['No', 'Si'] },
+            { label: 'Hábitat', name: 'habitatTipo', opts: ['Protegido', 'Duro'] },
+          ].map((item) => (
+            <div key={item.name} className="flex flex-col gap-1">
+              <Label className="text-[10px] uppercase font-bold text-teal-600 tracking-wider" htmlFor={item.name}>{item.label}</Label>
+              <select 
+                name={item.name} 
+                id={item.name}
+                aria-label={item.label}
+                value={(formData as any)[item.name]}
+                onChange={handleChange}
+                className="w-full h-9 rounded-md border border-cyan-300 bg-white px-2 py-1 text-xs shadow-sm focus:ring-2 focus:ring-teal-500 outline-none transition-all"
+              >
+                {item.opts.map((opt, i) => <option key={opt} value={i}>{opt}</option>)}
+              </select>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <Label className="text-teal-700 font-bold">Tamaño</Label>
+                <Input name="tamano" value={formData.tamano} onChange={handleChange} className="border-cyan-300" placeholder="Ej: 1.5 cm" />
+            </div>
+
         </div>
 
         <div>
-          <Label htmlFor="imagen" className="text-teal-700">
-            URL de Imagen
-          </Label>
-          <Input
-            id="imagen"
-            name="imagen"
-            value={formData.imagen}
-            onChange={handleChange}
-            placeholder="ej. https://ejemplo.com/imagen.jpg"
-            className="border-cyan-300 focus:border-teal-500"
-          />
+          <Label className="text-teal-700 font-bold">Descripción</Label>
+          <Textarea name="descripcion" value={formData.descripcion} onChange={handleChange} className="border-cyan-300 resize-none" rows={3} placeholder="Breve descripción taxonómica..." />
         </div>
 
-        <div>
-          <Label htmlFor="descripcion" className="text-teal-700">
-            Descripción
-          </Label>
-          <Textarea
-            id="descripcion"
-            name="descripcion"
-            value={formData.descripcion}
-            onChange={handleChange}
-            placeholder="Describe las características principales de esta especie..."
-            className="border-cyan-300 focus:border-teal-500 min-h-[100px]"
-          />
-        </div>
-
-        <div className="flex gap-3 pt-4">
-          <Button
-            type="submit"
-            className="flex-1 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white shadow-lg"
-          >
-            <Plus className="w-4 h-4 mr-2" />
-            Agregar Especie
+        <div className="flex gap-3 pt-2">
+          <Button type="submit" className="flex-1 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold h-11 hover:from-teal-600 hover:to-cyan-600 shadow-md transition-all">
+            <Plus className="w-4 h-4 mr-2" /> Registrar en Sistema
           </Button>
           {onCancel && (
-            <Button
-              type="button"
-              variant="outline"
-              onClick={onCancel}
-              className="border-gray-300 hover:bg-gray-100"
-            >
+            <Button type="button" variant="outline" onClick={onCancel} className="h-11 border-cyan-200 text-slate-500">
               Cancelar
             </Button>
           )}
