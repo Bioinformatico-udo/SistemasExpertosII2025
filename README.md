@@ -1,111 +1,52 @@
-# Repositorio de Proyectos de Sistemas Expertos
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2bf2d3c9-14ed-445c-a419-75e40590d68b" width="400" alt="logo_pinzasCraft">
+</p>
 
-Bienvenido/a al repositorio oficial de **Proyectos de Sistemas Expertos**. Este espacio está dedicado a los proyectos desarrollados por los grupos de trabajo 1, 2, 3, 4 y 5. Cada grupo tiene asignada una carpeta específica para trabajar en su proyecto, con el objetivo de evitar conflictos entre equipos.
+# PinzasCraft - Sistema de identificacion de crustaceos 🦀🚀
 
----
+Bienvenido al **Sistema Experto de Identificación de Crustaceos Porcellanidae**. Esta herramienta utiliza redes neuronales a traves de tensorflow para generar la clasificacion y tensorflow lite para leerla.
 
-## 🚀 Objetivo
+## 📋 Requisitos Previos
+*   Python 3.10+ (para el Back-End)
+*   Node.js (Para el front-End de la pagina)
+*   Acceso a Internet (Para la consulta con el experto IA)
 
-Fomentar el aprendizaje, la creatividad y el desarrollo de habilidades prácticas en la implementación de sistemas expertos, proporcionando un entorno colaborativo para compartir y mejorar proyectos.
+## 🛠️ Instalación Rápida
+1.  **Instalar Node.js**
+2.  **Clonar/Descargar** el proyecto en tu máquina.
+3.  **Crear Entorno Virtual**:
+    ```cmd
+    python -m venv venv
+    ```
+4.  **Activar Entorno**:
+    *   Windows: `venv\Scripts\activate`
+    *   Linux/Mac: `source venv/bin/activate`
+5.  **Instalar Dependencias**:
+   En server:
+    ```cmd
+    pip install -r requirments.txt
+    ```
+    en Client:
+    ```cmd
+    npm install
+    ```
 
----
-
-
-## 📂 Estructura del repositorio
-
-El repositorio está organizado en carpetas individuales para cada grupo. Cada equipo debe trabajar exclusivamente en su carpeta asignada:
-
+## 🚀 Ejecución
+Para iniciar el sistema experto:
+En server:
+```cmd
+python app.py
 ```
-/SistemasExpertosII2025
-├── Grupo1/
-├── Grupo2/
-├── Grupo3/
-├── Grupo4/
-├── Grupo5/
-```
+en Client:
+ ```cmd
+ npm run dev
+ ```
 
-Dentro de cada carpeta, cada grupo puede organizar su proyecto de la siguiente manera:
-
-```
-/GrupoN
-├── README.md          # Descripción del proyecto
-├── src/               # Código fuente
-├── docs/              # Documentación adicional
-├── tests/             # Casos de prueba (opcional)
-└── assets/            # Recursos como imágenes o diagramas (opcional)
-```
-
-# Reglas de Uso del Repositorio
-
-Este repositorio está organizado en diferentes ramas para que cada grupo trabaje de manera independiente. A continuación, se detallan las reglas de uso:
-
-1. **Trabajo exclusivo en tu carpeta:** Cada grupo debe modificar solo los archivos dentro de su carpeta asignada.
-2. **Documentación:** Cada proyecto debe incluir un archivo `README.md` con:
-   - Nombre del proyecto.
-   - Descripción general.
-   - Instrucciones de instalación y uso.
-   - Ejemplos de entrada/salida.
-
-# 1. Organización del Repositorio
-
-Cada grupo tiene su propia rama: Grupo1, Grupo2, Grupo3, Grupo4 y Grupo5.
-Los integrantes de cada grupo solo deben trabajar en su respectiva rama.
-El código en la rama main solo debe actualizarse cuando se aprueben los cambios de cada grupo.
-
-1. **Sin cambios en otras carpetas:** Evita editar archivos de otros grupos o de la raíz del repositorio.
-
-# 2. Flujo de Trabajo
-
-Antes de empezar a trabajar, actualizar el repositorio con git pull origin [nombre_rama].
-Realizar cambios y agregarlos con git add ..
-Hacer commits con mensajes claros, por ejemplo: git commit -m "Añadida funcionalidad X al sistema".
-Subir los cambios con git push origin [nombre_rama].
-Si se necesita fusionar cambios en main, se debe solicitar una revisión antes de hacer un pull request.
-
----
-
-## 🚀 Pasos para comenzar
-
-### 1. Clona el repositorio
-Descarga el repositorio a tu computadora local:
-```bash
-git clone https://github.com/Bioinformatico-udo/SistemasExpertosII2025.git
-```
-
-### 2. Cambia al directorio de tu grupo
-Navega a la carpeta correspondiente a tu equipo:
-```bash
-cd Grupo1  # Cambia 'Grupo1' por tu carpeta asignada
-```
-
-### 3. Trabaja en tu proyecto
-Agrega tus archivos y realiza los cambios necesarios. Recuerda documentar tu progreso y mantener el código organizado.
-
-### 4. Sube tus cambios al repositorio
-1. Agrega los archivos modificados:
-   ```bash
-   git add .
-   ```
-2. Crea un commit descriptivo:
-   ```bash
-   git commit -m "Descripción de los cambios"
-   ```
-3. Sube los cambios al repositorio remoto:
-   ```bash
-   git push origin main
-   ```
-
----
-
-# 3. Buenas Prácticas
-
-No modificar ramas de otros grupos sin permiso.
-Evitar subir archivos innecesarios (usar .gitignore si es necesario).
-Escribir código limpio y bien documentado.
-Resolver conflictos de merge con precaución y en equipo.
-
-- **Respalda tu trabajo:** Haz commits frecuentes para evitar pérdida de información.
-- **Revisa tu código:** Antes de subir cambios, asegúrate de que todo funciona correctamente.
-- **Comunicación:** Usa la sección de issues en GitHub para reportar problemas o discutir ideas con el administrador del proyecto.
-
-# 4. Contacto
+## 🧠 Funciones disponibles en modelo:
+1.  **Crear, gestionar y borrar los crustaceos que desee**
+2.  **Identificacion (Principalmete) de crusteaceos de la familia Porcellanidae**
+3.  **Catalogo extenso de las especies registradas**
+4.  **Activar Entorno**:
+5.  **Instalar Dependencias**:
+   
+**Desarrollado para la Cátedra de Biología Marina / Sistemas Expertos.** 💻🧬
