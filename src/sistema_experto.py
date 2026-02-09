@@ -2,7 +2,7 @@ import streamlit as st
 from motor_de_inferencia import MotorDeInferencia
 
 def mostrar_sistema_experto():
-    st.title("Sistema Experto Taxonómico HippoCaribe")
+    st.title("Sistema Experto HippoCaribe")
 
     motor = MotorDeInferencia(st.session_state.kb_dinamica)
     current = motor.obtener_actual()
