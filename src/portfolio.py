@@ -10,7 +10,7 @@ def mostrar_portafolio():
     Portafolio: https://portfolioangheloaguilera.vercel.app/ 
 
     **Integrante 2:** Josue Cabeza   
-    Portafolio: https://tuportafolio2.com  
+    Portafolio: https://josuecabeza.github.io/Portafolio/
 
     **Integrante 3:** Yuhan Picos     
     Portafolio: https://portfolio-yuhanpicos.vercel.app/ 

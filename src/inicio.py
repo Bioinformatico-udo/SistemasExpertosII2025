@@ -1,6 +1,6 @@
 import streamlit as st
 def mostrar_inicio():
-    st.title("Sistema Experto HippoCaribe")
+    st.title("Sistema Experto HippoCaribe 📖")
 
     st.markdown("""
     Bienvenido al sistema experto para la identificación de crustáceos

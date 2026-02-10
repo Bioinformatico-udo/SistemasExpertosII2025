@@ -8,7 +8,7 @@ BASE_DE_CONOCIMIENTO = {
             "imagen": "imagenes/flagelo.png",
             "opciones": {
                 "A - Es más corto que las anténulas": {
-                    "nota": "Has identificado al género Hippa. En el Caribe, este género cuenta con una única especie registrada.",
+                    "nota": "Has identificado al género Hippa. En el Caribe, este linaje cuenta con una única especie: Hippa testudinaria. Se distingue por tener un caparazón altamente convexo y liso, con estrías transversales finas. Sus anténulas son notablemente largas en comparación con los flagelos de las antenas, los cuales no están especializados para la filtración masiva como en otros géneros. Es un organismo típico de la zona intermareal en playas de arena gruesa y restos de coral, donde se entierra rápidamente ante el retroceso de las olas.",
                     "resultado": "Hippa testudinaria",
                     "imagen": "imagenes/hippa_testudinaria.jpeg"
                 },
@@ -18,15 +18,13 @@ BASE_DE_CONOCIMIENTO = {
                     "imagen": "imagenes/dactilo_emerita.png",
                     "opciones": {
                         "A - Punta redondeada": {
-                            "nota": "Este rasgo suele identificar a E. brasiliensis, aunque su presencia en Venezuela está bajo debate molecular reciente.",
-                            "resultado": "Emerita brasiliensis"
-                            ,
+                            "nota": "Emerita brasiliensis se caracteriza por un dáctilo del primer pereiópodo con extremo obtuso o redondeado. Su caparazón presenta líneas transversales aserradas en la región anterior. Es una especie sujeta a debate taxonómico en las costas de Venezuela: tradicionalmente reportada desde Brasil hasta el Caribe, estudios moleculares recientes sugieren que las poblaciones del norte podrían representar una unidad evolutiva distinta. Habita en la zona de resaca, utilizando sus antenas plumosas para filtrar microorganismos del agua en movimiento.",
+                            "resultado": "Emerita brasiliensis",
                             "imagen": "imagenes/emerita_brasiliensis.jpg"
                         },
                         "B - Punta aguda": {
-                            "nota": "La forma aguda es diagnóstica para esta especie, que suele habitar junto a otras en nuestras costas.",
-                            "resultado": "Emerita portoricensis"
-                            ,
+                            "nota": "Emerita portoricensis posee un dáctilo del primer pereiópodo claramente agudo o puntiagudo. El margen lateral de su caparazón es menos divergente que en otras especies del género. Es un componente esencial de la fauna de playas arenosas en el Caribe, adaptado a sedimentos de granulometría media a fina. Su ciclo reproductivo está fuertemente ligado a la hidrodinámica de la zona de barrido, y es común encontrarla en densas agregaciones que migran verticalmente con la marea para optimizar la alimentación por filtración.",
+                            "resultado": "Emerita portoricensis",
                             "imagen": "imagenes/emerita_portoricensis.jpg"
                         }
                     }
@@ -44,15 +42,13 @@ BASE_DE_CONOCIMIENTO = {
                     "imagen": "imagenes/dactilo_albunea.png",
                     "opciones": {
                         "A - Es una caída o depresión brusca": {
-                            "nota": "¡Excelente hallazgo! Esta especie es una nueva adición al inventario de Venezuela, reportada en la Isla La Tortuga.",
-                            "resultado": "Albunea catherinae"
-                            ,
+                            "nota": "Albunea catherinae destaca por una muesca o depresión profunda y angular en el margen posterior del dáctilo del cuarto pereiópodo. Posee un caparazón con un surco cervical profundo y espinas anterolaterales bien desarrolladas. Su reporte en la Isla La Tortuga representa un hito biogeográfico, ya que expande su rango conocido desde las costas de EE.UU. y el Golfo de México hasta el sur del Caribe. Es un excavador profundo que prefiere sustratos arenosos estables fuera de la zona de rompiente inmediata.",
+                            "resultado": "Albunea catherinae",
                             "imagen": "imagenes/Albunea_catherinae.jpg"
                         },
                         "B - Es una caída suave o gradual": {
-                            "nota": "Esta especie es común en el Caribe y puede habitar hasta los 101 m de profundidad.",
-                            "resultado": "Albunea paretii"
-                            ,
+                            "nota": "Albunea paretii se identifica por la curvatura suave y continua del margen posterior del dáctilo en su cuarta pata. Sus pedúnculos oculares son anchos en la base y se estrechan hacia el ápice. Es una de las especies de Albuneidae con mayor distribución batimétrica, pudiendo encontrarse desde aguas someras hasta zonas de plataforma externa a más de 100 metros de profundidad. Su caparazón suele presentar una textura rugosa debida a finas setas que ayudan a estabilizarse en el sedimento.",
+                            "resultado": "Albunea paretii",
                             "imagen": "imagenes/Albunea_paretii.jpg"
                         }
                     }
@@ -63,15 +59,13 @@ BASE_DE_CONOCIMIENTO = {
                     "imagen": "imagenes/ojos_lepidopa.png",
                     "opciones": {
                         "A - Tienen forma subovalada": {
-                            "nota": "Esta especie es muy parecida a L. luciae, pero se distingue por el talón agudo en sus patas.",
-                            "resultado": "Lepidopa venusta"
-                            ,
+                            "nota": "Lepidopa venusta presenta pedúnculos oculares de bordes redondeados, casi ovalados. El dáctilo del primer pereiópodo tiene un proceso proximal (talón) muy agudo y prominente, lo que la diferencia de su congénere L. luciae. Es una especie menos frecuente en los muestreos que L. richmondi y tiende a preferir sedimentos con una composición mineralógica específica. Como todos los albuneidos, utiliza sus largos flagelos antenales para formar un tubo respiratorio mientras permanece enterrada bajo la arena.",
+                            "resultado": "Lepidopa venusta",
                             "imagen": "imagenes/Ledidopa_venusta.jpeg"
                         },
                         "B - Tienen forma subrectangular (más cuadraditos)": {
-                            "nota": "Es la especie de Lepidopa más frecuente y ampliamente distribuida en las costas venezolanas.",
-                            "resultado": "Lepidopa richmondi"
-                            ,
+                            "nota": "Lepidopa richmondi se caracteriza por pedúnculos oculares casi rectangulares, con el margen anterior casi recto. Es, con diferencia, el miembro de la familia Albuneidae más abundante en las costas venezolanas, habitando principalmente playas de baja energía. Su caparazón es liso, brillante y presenta una armadura de espinas reducida en comparación con Albunea. Es un organismo detritívoro/carroñero que aprovecha la materia orgánica depositada en el fondo arenoso de la zona infralitoral superior.",
+                            "resultado": "Lepidopa richmondi",
                             "imagen": "imagenes/ledidopa_richmondi.jpg"
                         }
                     }
