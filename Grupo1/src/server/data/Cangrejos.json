@@ -6,6 +6,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Especie con coloración característica...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/neopisosoma_neglectum.jpg",
     "preguntas_identificacion": [1,0,1,0,0,1,1,0,1,0,1,0,1,0,1,0]
   },
   "Neopisosoma_angustifrons": {
@@ -15,6 +16,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/neopisosoma_angustifrons.jpg",
     "preguntas_identificacion": [1,0,1,0,1,0,1,0,1,0,0,1,1,0,1,0]
   },
   "Neopisosoma_orientale": {
@@ -24,6 +26,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/neopisosoma_orientale.jpeg",
     "preguntas_identificacion": [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0]
   },
   "Clastotoechus_nodosus": {
@@ -33,6 +36,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/Clastotoechus_nodosus.png",
     "preguntas_identificacion": [0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1]
   },
   "Pachycheles_serratus": {
@@ -42,6 +46,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/Pachycheles_serratus.png",
     "preguntas_identificacion": [0,1,0,1,0,1,1,0,0,1,1,0,1,0,0,1]
   },
   "Pachycheles_monilifer": {
@@ -51,6 +56,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/Pachycheles_monilifer.jpg",
     "preguntas_identificacion": [0,1,0,1,1,0,1,0,1,0,0,1,0,1,0,1]
   },
   "Pachycheles_riseii": {
@@ -60,6 +66,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/Pachycheles_risei.jpg",
     "preguntas_identificacion": [0,1,0,1,0,1,1,0,0,1,0,1,0,1,0,1]
   },
   "Pachycheles_ackleianus": {
@@ -69,6 +76,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/Pachycheles_ackleianus.png",
     "preguntas_identificacion": [0,1,0,1,1,0,1,0,0,1,0,1,1,0,0,1]
   },
   "Petrolisthes_tridentatus": {
@@ -78,6 +86,7 @@
     "tamano": "0.8-1.5 cm de caparazón",
     "descripcion": "Descripción de la especie...",
     "fechaAgregada": "2025-02-06",
+    "imagen":"imagenes/cangrejos/Petrolisthes_tridentatus.jpg",
     "preguntas_identificacion": [0,1,0,1,0,1,1,0,1,0,1,0,1,0,1,0]
   }
 }

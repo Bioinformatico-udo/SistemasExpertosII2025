@@ -37,19 +37,19 @@ export default function App() {
 
       // Diccionario de imágenes basado en tu archivo cangrejos.py
       const imagenesReferencia: Record<string, string> = {
-        'Neopisosoma_neglectum': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Neopisosoma_angustifrons': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Neopisosoma_orientale': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Clastotoechus_nodosus': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Pachycheles_serratus': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Pachycheles_monilifer': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Pachycheles_riseii': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Pachycheles_ackleianus': 'src/assets/images/crab/caparazon_rugoso.jpg',
-        'Petrolisthes_tridentatus': 'src/assets/images/crab/caparazon_rugoso.jpg',
+        'Neopisosoma_neglectum': 'imagenes/cangrejos/neopisosoma_neglectum.jpg',
+        'Neopisosoma_angustifrons': 'imagenes/cangrejos/neopisosoma_angustifrons.jpg',
+        'Neopisosoma_orientale': 'imagenes/cangrejos/neopisosoma_orientale.jpeg',
+        'Clastotoechus_nodosus': 'imagenes/cangrejos/Clastotoechus_nodosus.png',
+        'Pachycheles_serratus': 'imagenes/cangrejos/Pachycheles_serratus.png',
+        'Pachycheles_monilifer': 'imagenes/cangrejos/Pachycheles_monilifer.jpg',
+        'Pachycheles_riseii': 'imagenes/cangrejos/Pachycheles_risei.jpg',
+        'Pachycheles_ackleianus': 'imagenes/cangrejos/Pachycheles_ackleianus.png',
+        'Petrolisthes_tridentatus': 'imagenes/cangrejos/Petrolisthes_tridentatus.jpg',
       };
 
       const speciesArray = Object.entries(data).map(([key, info]: [string, any]) => {
-        const imagenFinal = imagenesReferencia[key] || info.imagen || 'src/assets/images/crab/default.jpg';
+        const imagenFinal = info.imagen || imagenesReferencia[key]  || 'src/assets/images/crab/default.jpg';
 
         return {
           id: key,
