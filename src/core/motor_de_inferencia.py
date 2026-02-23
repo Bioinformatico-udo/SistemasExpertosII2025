@@ -3,9 +3,11 @@ class MotorDeInferencia:
     def __init__(self, kb):
         self.kb = kb
         if "history" not in st.session_state:
-            st.session_state.history = [self.kb]
+            st.session_state.history = [] 
 
     def obtener_actual(self):
+        if not st.session_state.history:
+            return self.kb
         return st.session_state.history[-1]
 
     def procesar(self, opcion):
@@ -14,8 +16,8 @@ class MotorDeInferencia:
             st.session_state.history.append(current["opciones"][opcion])
 
     def atras(self):
-        if len(st.session_state.history) > 1:
+        if len(st.session_state.history) > 0:
             st.session_state.history.pop()
 
     def reiniciar(self):
-        st.session_state.history = [self.kb]
+        st.session_state.history = [] 
