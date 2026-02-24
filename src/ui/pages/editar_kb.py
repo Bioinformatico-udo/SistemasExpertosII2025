@@ -187,6 +187,3 @@ def interfaz_crear_pregunta():
                 elif "resultado" in kb: h += f'<div class="node-resultado">🦀 {kb["resultado"]}</div>'
                 return h
             st.markdown(f'<div class="scroll-container">{arbol(st.session_state.kb_dinamica)}</div>', unsafe_allow_html=True)
-
-if __name__ == "__main__":
-    interfaz_crear_pregunta()
