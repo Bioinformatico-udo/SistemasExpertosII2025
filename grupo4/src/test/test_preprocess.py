@@ -1,15 +1,15 @@
 """Pruebas unitarias básicas para preprocesado."""
 
 import pandas as pd
-from src.data.preprocess import calcular_ratios
+from src.datos.preprocesar import calcular_ratios
 
 def test_calcular_ratios():
     df = pd.DataFrame([{
-        'carapace_length_mm': 10,
-        'rostro_length_mm': 3,
-        'chela_length_mm': 12,
-        'chela_width_mm': 4
+        'longitud_caparazon_mm': 10,
+        'longitud_rostro_mm': 3,
+        'longitud_quela_mm': 12,
+        'ancho_quela_mm': 4
     }])
     out = calcular_ratios(df)
-    assert out['rostro_ratio'].iloc[0] == 0.3
-    assert out['chela_ratio'].iloc[0] == 3.0
+    assert out['ratio_rostro'].iloc[0] == 0.3
+    assert out['ratio_quela'].iloc[0] == 3.0

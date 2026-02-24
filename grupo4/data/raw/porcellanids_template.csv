@@ -1,3 +1,0 @@
-record_id,genus_provisional,species_validated,country,locality,latitude,longitude,depth_m,date_collected,photo_dorsal,photo_lateral,carapace_length_mm,rostro_length_mm,chela_length_mm,chela_width_mm,pleon_folded,setae_presence,rostro_spines_count,carapace_ornamentation,chela_shape,observer,notes
-R001,Porcellana,sp. A,Venezuela,Isla X,10.123,-64.123,12,2025-11-01,images/R001_dorsal.jpg,images/R001_lateral.jpg,8.5,3.0,12.0,4.0,1,1,2,tuberculate,slender,Jose,Registro piloto ejemplo
-R002,Petrolisthes,sp. B,Venezuela,Isla Y,10.456,-64.456,5,2025-10-20,images/R002_dorsal.jpg,images/R002_lateral.jpg,6.2,1.2,8.0,3.5,0,0,0,smooth,robust,Ana,Registro piloto ejemplo
