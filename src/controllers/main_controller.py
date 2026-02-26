@@ -89,9 +89,9 @@ class MainController:
         if username == "admin": return False
         return db.delete_user(username)
 
-    # --- Métodos de generación de reportes ---
+
     def generate_id_report(self, user_image_path, result_data, ai_conversation=""):
-        """Genera un certificado PDF con el resultado de la identificación, incluyendo el chat de la IA."""
+        
         from fpdf import FPDF
         from datetime import datetime
         import pathlib
