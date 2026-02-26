@@ -91,7 +91,6 @@ class MainController:
 
     # --- Métodos de generación de reportes ---
     def generate_id_report(self, user_image_path, result_data, ai_conversation=""):
-        """Genera un certificado PDF con el resultado de la identificación, incluyendo el chat de la IA."""
         from fpdf import FPDF
         from datetime import datetime
         import pathlib
@@ -237,3 +236,4 @@ class MainController:
             context = f"El usuario está viendo un {top['genus']} {top['species']}."
         
         return self.ai.chat_query(question, context)
+
