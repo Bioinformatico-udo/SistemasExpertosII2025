@@ -1,6 +1,5 @@
 {
     "pregunta": "Comencemos por la parte posterior: ¿Qué proporción guarda el telson (la pieza final de la cola) respecto al caparazón?",
-    "nota": "",
     "imagen": "assets/telson.png",
     "opciones": {
         "B - Largo (Al menos la mitad del caparazón)": {
@@ -24,9 +23,9 @@
                             "imagen": "assets/emerita_brasiliensis.jpg"
                         },
                         "B - Punta aguda": {
-                            "nota": "Emerita portoricensis posee un dáctilo del primer pereiópodo claramente agudo o puntiagudo. El margen lateral de su caparazón es menos divergente que en otras especies del género. Es un componente esencial de la fauna de playas arenosas en el Caribe, adaptado a sedimentos de granulometría media a fina. Su ciclo reproductivo está fuertemente ligado a la hidrodinámica de la zona de barrido, y es común encontrarla en densas agregaciones que migran verticalmente con la marea para optimizar la alimentación por filtración.",
-                            "resultado": "Emerita portoricensis",
-                            "imagen": "assets/emerita_portoricensis.jpg"
+                            "resultado": "Holaaaa",
+                            "nota": "",
+                            "imagen": "src/assets/Lean Canvas.jpg"
                         }
                     }
                 }
