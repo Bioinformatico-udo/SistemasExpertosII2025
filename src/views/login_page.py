@@ -105,14 +105,14 @@ class LoginPage(ctk.CTkFrame):
 # --- SECCIÓN DEL PORTAFOLIOS ---
 
         # --- PORTAFOLIO 1 (Georg) ---
-        self.link3 = ctk.CTkLabel(self, text="Portafolio de Georg", 
+        self.link3 = ctk.CTkLabel(self, text="Portafolio de Georg Boadas", 
                             font=("Segoe UI", 12, "underline"), text_color="cyan", cursor="hand2")
         self.link3.pack(pady=(5, 0))
         self.link3.bind("<Button-1>", lambda e: os.startfile("https://boadasgeorg.github.io/portafolio"))
 
         # --- PORTAFOLIO 2 (Daniela) ---
         self.link1 = ctk.CTkLabel(self, 
-                            text="Portafolio de Daniela", 
+                            text="Portafolio de Daniela Rodriguez", 
                             font=("Segoe UI", 12, "underline"), 
                             text_color="cyan", 
                             cursor="hand2")
@@ -121,7 +121,7 @@ class LoginPage(ctk.CTkFrame):
 
         # --- PORTAFOLIO 3 (Vicky) ---
         self.link2 = ctk.CTkLabel(self, 
-                            text="Portafolio de Vicky", 
+                            text="Portafolio de Victorialys Salazar", 
                             font=("Segoe UI", 12, "underline"), 
                             text_color="cyan", 
                             cursor="hand2")
