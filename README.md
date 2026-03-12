@@ -16,7 +16,6 @@ Repositorio principal para el desarrollo de sistemas expertos por grupos.
 ├── tests/ # Pruebas de integración
 └── .github/ # Configuración de GitHub
 
-
 ## 🚀 Grupos de Desarrollo
 | Grupo | Rama | Estado | Responsable |
 |-------|------|--------|-------------|
