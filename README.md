@@ -1,4 +1,4 @@
-# Sistemas Expertos 2025
+# Sistemas Expertos II 2025
 
 ## 📋 Descripción del Proyecto
 Repositorio principal para el desarrollo de sistemas expertos por grupos.
