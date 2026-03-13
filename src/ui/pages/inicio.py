@@ -88,8 +88,6 @@ def mostrar_inicio():
             </div>
         """, unsafe_allow_html=True)
         
-        if st.button("IDENTIFICAR ESPECIE", use_container_width=True):
-            mostrar_sistema_experto()
 
     with c2:
         st.image("assets/SE.png", use_container_width=True)

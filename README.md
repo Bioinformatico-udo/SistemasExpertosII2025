@@ -23,8 +23,8 @@
 
 Bash
 pip install streamlit
+pip install streamlit_option_menu
 Ejecución:
-Guarda el código en un archivo llamado app.py y ejecútalo con el siguiente comando:
 
 Bash
 streamlit run app.py
