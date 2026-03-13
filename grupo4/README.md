@@ -41,7 +41,7 @@ He tratado de mantener todo muy ordenado:
 
 ## 🛠️ Instalación y Uso (Windows)
 
-Para ponerlo a funcionar en mi máquina, sigo estos pasos:
+Para ponerlo a funcionar en mi máquina, primero debe abrir la carpeta "grupo 4" una vez dentro ejecuta una terminal y sigo estos pasos:
 
 1.  **Crear un entorno virtual** (para no mezclar librerías):
     ```powershell
